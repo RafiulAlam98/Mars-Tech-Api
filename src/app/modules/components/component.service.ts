@@ -1,0 +1,15 @@
+import { IComponents } from './component.interface'
+import { Component } from './component.model'
+
+const addComponent = async (data: IComponents) => {
+  const result = await Component.create(data)
+  return result
+}
+const getAllComponent = async () => {
+  const result = await Component.find()
+  return result
+}
+export const ComponentService = {
+  addComponent,
+  getAllComponent,
+}
