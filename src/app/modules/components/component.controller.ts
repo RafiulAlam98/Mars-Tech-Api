@@ -25,8 +25,20 @@ const getAllComponent = catchAsync(async (req: Request, res: Response) => {
     data: result,
   })
 })
+const getSingleComponent = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params
+  const result = await ComponentService.getSingleComponent(id)
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'pc component retrieved successfully!',
+    data: result,
+  })
+})
 
 export const ComponentController = {
   addComponent,
   getAllComponent,
+  getSingleComponent,
 }

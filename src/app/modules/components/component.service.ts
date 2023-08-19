@@ -9,7 +9,12 @@ const getAllComponent = async () => {
   const result = await Component.find()
   return result
 }
+const getSingleComponent = async (id: string) => {
+  const result = await Component.findOne({ _id: id })
+  return result
+}
 export const ComponentService = {
   addComponent,
   getAllComponent,
+  getSingleComponent,
 }
